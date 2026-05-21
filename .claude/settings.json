@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": ["read", "write", "edit", "bash", "glob", "grep", "web", "notify"]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "file",
+        "command": "bash scripts/session-start.sh"
+      }
+    ]
+  }
+}
