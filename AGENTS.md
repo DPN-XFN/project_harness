@@ -9,11 +9,12 @@
 
 ```bash
 # 1. 把 harnexx 结构拷贝到你的项目
-cp -r .claude docs sessions scripts /path/to/your/project/
-cp STYLE.md /path/to/your/project/
+bash scripts/init.sh /path/to/your/project
+
+# 或安装记忆层
+bash scripts/init.sh /path/to/your/project --with-mem
 
 # 2. 编辑 STYLE.md 填写项目信息
-
 # 3. 开始对话
 ```
 
@@ -55,6 +56,7 @@ project/
 ├── sessions/
 │   ├── active-tasks.md        # 活跃任务
 │   └── YYYY-MM-DD.md          # 每日记录（AI 自动创建）
+├── memory/                    # 跨 session 持久记忆（可选）
 └── scripts/
     ├── init.sh                # 初始化脚本（拷贝用）
     ├── session-start.sh       # 对话开始

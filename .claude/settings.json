@@ -1,6 +1,6 @@
 {
   "permissions": {
-    "allow": ["read", "write", "edit", "bash", "glob", "grep", "web", "notify"]
+    "allow": ["read", "write", "edit", "bash", "glob", "grep", "web", "notify", "search_files"]
   },
   "hooks": {
     "PreToolUse": [
@@ -8,6 +8,16 @@
         "matcher": "file",
         "command": "bash scripts/session-start.sh"
       }
+    ],
+    "PostToolUse": [],
+    "MessageStop": [
+      {
+        "matcher": "any",
+        "command": "bash scripts/session-end.sh"
+      }
     ]
+  },
+  "plugins": {
+    "marketplaces": ["thedotmack/claude-mem"]
   }
 }

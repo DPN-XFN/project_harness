@@ -26,6 +26,7 @@ AI 每次对话自动遵循以下规则。
 1. 读取 `sessions/active-tasks.md`（了解当前待办）
 2. 读取 `sessions/YYYY-MM-DD.md`（当天文件，如存在）
 3. 当天文件不存在时，基于模板创建，从 active-tasks.md 填写"今日目标"
+4. 如有 claude-mem 安装，自动调用 mem-search 检索相关历史上下文
 
 ### 规则 2：关键节点记录任务
 满足以下任一条件时，在当天 session 的"会话记录"区块追加一条，同步更新 active-tasks.md：
@@ -134,6 +135,8 @@ docs/                  # 项目知识（参考型）
 │   ├── testing.md     # 测试规范
 │   └── database.md    # 数据库规范
 └── incidents.md       # 踩坑记录（按时间追加）
+
+memory/                # 跨 session 持久化记忆（claude-mem 或 agentmemory）
 ```
 
 ---
